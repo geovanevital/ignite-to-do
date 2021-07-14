@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, View, Alert } from 'react-native';
+import {
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+  Alert
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 interface TodoInputProps {
@@ -15,7 +21,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
       setTask('');
     } else {
       Alert.alert(
-        "Atenção",
+        "Tarefa vazia",
         "Você não pode adicionar uma tarefa sem conteúdo.",
         [
           {
@@ -39,7 +45,6 @@ export function TodoInput({ addTask }: TodoInputProps) {
         onSubmitEditing={handleAddNewTask}
       />
       <TouchableOpacity
-        testID="add-new-task-button"
         activeOpacity={0.7}
         style={styles.addButton}
         onPress={handleAddNewTask}
